@@ -1,0 +1,36 @@
+@import "mixins";
+
+$primary: red;
+$secondary-color: blue;
+$primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//nested , we can write a complete container style.
+.nested {
+  background-color: $secondary-color;
+  font-family: $primary-font;
+  h1 {
+    color: green;
+  }
+}
+
+// resposnsiveness
+
+@include mobileview() {
+  .nested {
+    background-color: greenyellow;
+  }
+}
+
+@include tabview {
+  .nested {
+    background-color: orangered;
+    h1 {
+      color: white;
+    }
+  }
+}
+
+:export {
+  primary: $primary;
+  nested: nested;
+}
