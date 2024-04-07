@@ -1,7 +1,7 @@
 @import "mixins";
 
-$primary: red;
-$secondary-color: blue;
+$primary: black;
+$secondary-color: green;
 $primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 //nested , we can write a complete container style.
@@ -14,6 +14,13 @@ $primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 // resposnsiveness
+
+.button {
+  width: 100px;
+  height: 80px;
+  border: 2px solid white;
+ 
+}
 
 @include mobileview() {
   .nested {
@@ -32,5 +39,7 @@ $primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 :export {
   primary: $primary;
+  secondary: $secondary-color;
   nested: nested;
+  button: button;
 }

@@ -1,0 +1,51 @@
+@import "mixins";
+@import "responsiveMixins";
+/**
+*
+*/
+
+$dark: black;
+$light: white;
+
+$primary: green;
+
+.imageContainer {
+  width: 100%;
+}
+.container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: auto;
+}
+
+.nested {
+  padding: 20px;
+  border: 2px solid red;
+  border-radius: 5px;
+
+  h1 {
+    color: $primary;
+  }
+
+  imageContainer {
+    img {
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+@include mobileview() {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+:export {
+  container: container;
+  dark: $dark;
+  light: $light;
+}
