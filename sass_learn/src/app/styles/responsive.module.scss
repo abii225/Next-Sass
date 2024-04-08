@@ -5,7 +5,7 @@
 */
 
 $dark: black;
-$light: white;
+$light: #fff;
 
 $primary: green;
 
@@ -13,6 +13,7 @@ $primary: green;
   width: 100%;
 }
 .container {
+  max-width: 1500px;
   width: 90%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -22,25 +23,50 @@ $primary: green;
 
 .nested {
   padding: 20px;
-  border: 2px solid red;
+
   border-radius: 5px;
 
   h1 {
     color: $primary;
   }
 
-  imageContainer {
-    img {
-      width: 100%;
-      display: block;
-      margin: auto;
-    }
+  img {
+    max-width: 300px;
+    display: block;
+    margin: auto;
   }
 }
 
 @include mobileview() {
   .container {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .nested {
+    background-color: lighten($color: red, $amount: 20%);
+  }
+}
+
+@include tabview() {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nested {
+    background-color: lighten($color: orange, $amount: 20%);
+  }
+}
+
+@include desktopView() {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include box() {
+  .container {
+    margin-top: 30px;
+  }
+  .nested {
+    box-shadow: greenyellow 0px 5px 15px;
   }
 }
 

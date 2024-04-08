@@ -17,9 +17,13 @@ $primary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 .button {
   width: 100px;
-  height: 80px;
+  height: 40px;
   border: 2px solid white;
- 
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 @include mobileview() {

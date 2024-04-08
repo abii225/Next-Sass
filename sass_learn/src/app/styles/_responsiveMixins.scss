@@ -1,11 +1,16 @@
 @mixin mobileview {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 799px) {
     @content;
   }
 }
 
 @mixin tabview {
-  @media screen and ((min-width: 601px) and (max-width:800px)) {
+  @media screen and ((min-width: 800px) and (max-width:999px)) {
+    @content;
+  }
+}
+@mixin desktopView() {
+  @media screen and ((min-width: 1000px) and (max-width:1500px)) {
     @content;
   }
 }

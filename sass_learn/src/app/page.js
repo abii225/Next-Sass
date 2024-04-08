@@ -2,7 +2,8 @@
 
 import variable from "./styles/variable.module.scss";
 import responsive from "./styles/responsive.module.scss";
-
+import { CiDark } from "react-icons/ci";
+import { FaRegLightbulb } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 /**
  *
@@ -31,8 +32,13 @@ export default function Home() {
       style={{ backgroundColor: dark ? responsive.dark : responsive.light }}
     >
       <div>
-        <h1 style={{ color: dark ? responsive.light : responsive.dark }}>
-          Welcome t22o Sass Learning
+        <h1
+          style={{
+            color: dark ? responsive.light : responsive.dark,
+            textAlign: "center",
+          }}
+        >
+          Welcome to Sass Learning
         </h1>
         <button
           className={variable.button}
@@ -42,16 +48,17 @@ export default function Home() {
           onClick={() => setDark((prev) => !prev)}
         >
           {" "}
-          {dark ? "Dark" : "Light"}
+          {dark ? <CiDark /> : <FaRegLightbulb />}
         </button>
       </div>
       {/*  */}
       <div className={responsive.container}>
         {data.length &&
           data.map((ele) => {
+            2;
             return (
               <div className={responsive.nested} key={ele.id}>
-                <div>
+                <div className={responsive.nested.img}>
                   <img src={ele.url} alt={ele.id} />
                 </div>
 
